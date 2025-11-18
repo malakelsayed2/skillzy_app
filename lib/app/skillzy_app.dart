@@ -33,6 +33,7 @@ class SkillzyApp extends StatelessWidget {
     return MaterialApp.router(
       routerConfig: router,
       theme: ThemeData(fontFamily: StringManager.appFont),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
