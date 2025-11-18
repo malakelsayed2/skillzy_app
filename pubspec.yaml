@@ -30,6 +30,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  percent_indicator: ^4.2.5
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -70,6 +71,11 @@ flutter:
     - assets/icons/googleIcon.png
     - assets/icons/appleIcon.png
     - assets/icons/emailIcon.png
+    - assets/icons/locationIcon.png
+    - assets/icons/microphoneIcon.png
+    - assets/icons/cameraIcon.png
+    - assets/images/access.png
+    - assets/images/signup_check.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

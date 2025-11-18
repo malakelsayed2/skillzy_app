@@ -66,7 +66,7 @@ class SignUpScreen extends StatelessWidget {
                 title: 'Sign Up',
                 titleColor: ColorManager.mainColorWhite,
                 buttonColor: ColorManager.mainColorGreen,
-                onPressed: () {},
+                onPressed: () {context.push('/signupConfirm');},
               ),
               SizedBox(height: 20,),
               Row(
