@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 
-import '../constants/color_manager.dart';
-
 class CustomButton extends StatelessWidget {
   const CustomButton({
     super.key,
     required this.title,
     required this.titleColor,
     required this.buttonColor,
+    required this.onPressed,
   });
 
   final String title;
@@ -15,6 +14,7 @@ class CustomButton extends StatelessWidget {
   final int titleColor;
 
   final int buttonColor;
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,7 @@ class CustomButton extends StatelessWidget {
           ),
           backgroundColor: WidgetStatePropertyAll(Color(buttonColor)),
         ),
-        onPressed: () {},
+        onPressed: onPressed,
         child: Text(
           title,
           style: TextStyle(fontSize: 20, color: Color(titleColor)),

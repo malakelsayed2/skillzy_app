@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:go_router/go_router.dart';
 import '../../../core/constants/color_manager.dart';
 import '../../../core/constants/string_manager.dart';
 import '../../../core/widgets/custom_button.dart';
@@ -45,10 +45,7 @@ class SplashPage2 extends StatelessWidget {
             alignment: AlignmentDirectional.centerStart,
             child: Text(
               'Switch Your Skill With Other Someone’s Skill',
-              style: TextStyle(
-                fontSize: 14,
-                color: Color(0xFFD0D0D0),
-              ),
+              style: TextStyle(fontSize: 14, color: Color(0xFFD0D0D0)),
             ),
           ),
           Spacer(flex: 1),
@@ -56,12 +53,18 @@ class SplashPage2 extends StatelessWidget {
             title: 'Get Started',
             titleColor: ColorManager.mainColorWhite,
             buttonColor: ColorManager.mainColorGreen,
+            onPressed: () {
+              context.go('/signup');
+            },
           ),
           SizedBox(height: 10),
           CustomButton(
             title: 'Login',
             titleColor: ColorManager.mainColorGreen,
             buttonColor: ColorManager.mainColorWhite,
+            onPressed: () {
+              context.go('/login');
+            },
           ),
           Spacer(flex: 2),
         ],
