@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "12576972160",
+    "project_id": "skillzy-app-83aa3",
+    "storage_bucket": "skillzy-app-83aa3.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:12576972160:android:70142841d55086d392b565",
+        "android_client_info": {
+          "package_name": "com.example.skillzy_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFaibCCOIn2wppKE5JgY1rmCEbKnoCJ_E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

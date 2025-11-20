@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:provider/provider.dart';
 import '../../../core/constants/color_manager.dart';
 import '../../../core/constants/string_manager.dart';
+import '../../../core/view_model/app_brain.dart';
 import '../../../core/widgets/custom_button.dart';
 
 class SplashPage2 extends StatelessWidget {
   const SplashPage2({super.key});
 
+
   @override
   Widget build(BuildContext context) {
+    Provider.of<AppBrain>(context) ;
     return Container(
       padding: EdgeInsetsGeometry.symmetric(horizontal: 49),
 

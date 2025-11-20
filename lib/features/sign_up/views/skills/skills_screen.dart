@@ -15,17 +15,30 @@ class SkillsScreen extends StatefulWidget {
 
 class _SkillsScreenState extends State<SkillsScreen> {
   int currentPage = 0;
+  late PageController controller;
+
+  final List<Widget> pages = [OwnSkillsScreens(), LearningSkillsScreen()];
+
+  @override
+  void initState() {
+    super.initState();
+    controller = PageController();
+  }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose() ;
+  }
 
   @override
   Widget build(BuildContext context) {
-    PageController controller = PageController();
-
-    List<Widget> pages = [OwnSkillsScreens(), LearningSkillsScreen()];
+    final screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20.0),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
@@ -34,16 +47,14 @@ class _SkillsScreenState extends State<SkillsScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'Step ${currentPage + 1}/2',
+                    'Step ${currentPage + 1}/${pages.length}',
                     style: TextStyle(
                       fontSize: 16,
                       color: Color(ColorManager.mainColorGreen),
                     ),
                   ),
                   TextButton(
-                    onPressed: () {
-                      context.go('/mainLayout');
-                    },
+                    onPressed: () => context.go('/mainLayout'),
                     child: Text(
                       'Skip',
                       style: TextStyle(
@@ -57,28 +68,30 @@ class _SkillsScreenState extends State<SkillsScreen> {
               SizedBox(height: 20),
 
               LinearPercentIndicator(
-                width: 400,
+                width: screenWidth - 40, // full width minus padding
                 lineHeight: 10,
-                percent: currentPage == 0 ? 0.5 : 1,
+                percent: (currentPage + 1) / pages.length,
                 backgroundColor: Color(0xFFF2F2F2),
                 progressColor: Color(ColorManager.mainColorGreen),
                 barRadius: Radius.circular(14),
               ),
               SizedBox(height: 40),
-              SizedBox(
-                height: 500,
+
+              Expanded(
                 child: PageView(
+                  physics: NeverScrollableScrollPhysics(),
                   controller: controller,
                   onPageChanged: (value) {
-                    currentPage = value;
-                    setState(() {});
+                    setState(() {
+                      currentPage = value;
+                    });
                   },
                   children: pages,
                 ),
               ),
-              Spacer(flex: 2),
+
               CustomButton(
-                title: 'Done',
+                title: currentPage == pages.length - 1 ? 'Done' : 'Next',
                 titleColor: ColorManager.mainColorWhite,
                 buttonColor: ColorManager.mainColorGreen,
                 onPressed: () {
@@ -92,7 +105,7 @@ class _SkillsScreenState extends State<SkillsScreen> {
                   }
                 },
               ),
-              Spacer(flex: 1),
+              SizedBox(height: 20),
             ],
           ),
         ),
