@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:skillzy_app/core/constants/color_manager.dart';
 import 'package:skillzy_app/core/constants/string_manager.dart';
 import 'package:skillzy_app/core/widgets/custom_button.dart';
+import 'package:skillzy_app/core/widgets/custom_profile_connection_card.dart';
 import 'package:skillzy_app/core/widgets/custom_skill_card.dart';
 import '../../../core/view_model/app_brain.dart';
 import '../../../core/widgets/custom_textfield.dart';
@@ -68,7 +69,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 8 , horizontal: 15),
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 8,
+                    horizontal: 15,
+                  ),
                   child: Column(
                     children: [
                       Text(
@@ -79,7 +83,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           color: Colors.white,
                         ),
                       ),
-                      SizedBox(height: 5,),
+                      SizedBox(height: 5),
                       CustomButton(
                         title: 'View Matchies',
                         titleColor: ColorManager.mainColorGreen,
@@ -110,6 +114,17 @@ class _HomeScreenState extends State<HomeScreen> {
               SizedBox(height: 40),
               Text('Nearby People', style: TextStyle(fontSize: 20)),
               SizedBox(height: 20),
+              SizedBox(
+                height: 240,
+                child: ListView.separated(
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) {
+                    return CustomProfileConnectionCard();
+                  },
+                  separatorBuilder: (context, index) => Container(width: 10),
+                  itemCount: 4,
+                ),
+              ),
             ],
           ),
         ),

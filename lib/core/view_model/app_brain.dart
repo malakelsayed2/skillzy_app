@@ -13,13 +13,11 @@ class AppBrain extends ChangeNotifier {
   Future<void> getSkillsList()async{
     final firebaseServices =FirebaseServices() ;
     skillsList = await firebaseServices.fetchSkills() ;
-    notifyListeners();
   }
 
   void getTopSkills(){
     topSkillsList = skillsList.where((skill) {
       return skill.isTopSkill == true ;
     },).toList();
-    notifyListeners();
   }
 }

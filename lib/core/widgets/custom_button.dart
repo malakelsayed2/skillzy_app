@@ -10,9 +10,7 @@ class CustomButton extends StatelessWidget {
   });
 
   final String title;
-
   final int titleColor;
-
   final int buttonColor;
   final VoidCallback onPressed;
 
