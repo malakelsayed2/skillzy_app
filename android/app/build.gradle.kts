@@ -11,6 +11,7 @@ dependencies {
 }
 
 android {
+    namespace = "com.example.libphonenumber"
     namespace = "com.example.skillzy_app"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = "27.0.12077973"

@@ -55,7 +55,7 @@ class ForgotPassScreen extends StatelessWidget {
               ),
               SizedBox(height: 30),
               CustomTextfield(
-                prefixIcon: 'assets/icons/emailIcon.png',
+                prefixIcon: Image.asset('assets/icons/emailIcon.png'),
                 hint: 'Email',
               ),
               SizedBox(height: 30),

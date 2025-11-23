@@ -2,6 +2,7 @@ class UserModel{
   final String id;
   final String name;
   final String email;
+  final String phoneNumber ;
   final String profilePhoto;
   final String coverPhoto;
   final String city;
@@ -21,14 +22,15 @@ class UserModel{
 
   final List<String> availabilityTime;
 
-  UserModel({
+  UserModel( {
     required this.id,
     required this.name,
     required this.email,
-    required this.profilePhoto,
-    required this.coverPhoto,
-    required this.city,
-    required this.country,
+    required this.phoneNumber,
+     this.profilePhoto ='',
+     this.coverPhoto='',
+    this.city ='',
+    this.country='',
     this.skills = const [],
     this.switchingSkillsCount = 0,
     this.rating = 0.0,
@@ -46,10 +48,11 @@ class UserModel{
       id: map['id'],
       name: map['name'],
       email: map['email'],
-      profilePhoto: map['profilePhoto'],
-      coverPhoto: map['coverPhoto'],
-      city: map['city'],
-      country: map['country'],
+      phoneNumber: map['phoneNumber'],
+      profilePhoto: map['profilePhoto']??'',
+      coverPhoto: map['coverPhoto']??'',
+      city: map['city']??'',
+      country: map['country']??'',
       skills: List<String>.from(map['skills'] ?? []),
       switchingSkillsCount: map['switchingSkillsCount'] ?? 0,
       rating: (map['rating'] ?? 0).toDouble(),
@@ -61,6 +64,28 @@ class UserModel{
       connectionsCount: map['connectionsCount'] ?? 0,
       availabilityTime: List<String>.from(map['availabilityTime'] ?? []),
     );
+  }
+  Map<String, dynamic> toMap() {
+    return {
+      'id': id,
+      'name': name,
+      'email': email,
+      'phoneNumner': phoneNumber,
+      'profilePhoto': profilePhoto,
+      'coverPhoto': coverPhoto,
+      'city': city,
+      'country': country,
+      'skills': skills,
+      'switchingSkillsCount': switchingSkillsCount,
+      'rating': rating,
+      'completedCoursesCount': completedCoursesCount,
+      'totalLearningHours': totalLearningHours,
+      'publishedCourses': publishedCourses,
+      'addedCourses': addedCourses,
+      'connections': connections,
+      'connectionsCount': connectionsCount,
+      'availabilityTime': availabilityTime,
+    };
   }
 
 

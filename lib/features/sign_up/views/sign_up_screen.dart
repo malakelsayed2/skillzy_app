@@ -1,14 +1,16 @@
+import 'package:country_picker/country_picker.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:skillzy_app/core/constants/color_manager.dart';
 import 'package:skillzy_app/core/constants/string_manager.dart';
+import 'package:skillzy_app/core/services/firebase_services.dart';
 import 'package:skillzy_app/core/widgets/custom_button.dart';
 import 'package:skillzy_app/core/widgets/custom_external_signup_login.dart';
 import 'package:skillzy_app/core/widgets/custom_textfield.dart';
 
 class SignUpScreen extends StatefulWidget {
-  SignUpScreen({super.key});
+  const SignUpScreen({super.key});
 
   @override
   State<SignUpScreen> createState() => _SignUpScreenState();
@@ -27,9 +29,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   TextEditingController phoneController = TextEditingController();
 
-  bool isPassHidden = true ;
+  bool isPassHidden = true;
 
-  bool isConfirmPassHidden = true ;
+  bool isConfirmPassHidden = true;
+
+  Country? selectedCountry;
 
   @override
   Widget build(BuildContext context) {
@@ -63,38 +67,43 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   child: Column(
                     children: [
                       CustomTextfield(
-                        prefixIcon: 'assets/icons/person.png',
+                        prefixIcon: Image.asset('assets/icons/person.png'),
                         hint: 'Username',
                         controller: usernameController,
                         validator: (p0) {
                           if (p0!.length < 3) {
-                            return "Username Must Have At Least 3 Characters!" ;
+                            return "Username Must Have At Least 3 Characters!";
                           }
                           return null;
                         },
                       ),
                       SizedBox(height: 10),
                       CustomTextfield(
-                        prefixIcon: 'assets/icons/emailIcon.png',
+                        prefixIcon: Image.asset('assets/icons/emailIcon.png'),
                         hint: 'Email',
                         controller: emailController,
                         validator: (p0) {
-                          if(!p0!.contains('@')){
-                            return 'Enter A Valid Email!' ;
+                          if (!p0!.contains('@')) {
+                            return 'Enter A Valid Email!';
                           }
                           return null;
                         },
                       ),
                       SizedBox(height: 10),
                       CustomTextfield(
-                        prefixIcon: 'assets/icons/password.png',
+                        prefixIcon: Image.asset('assets/icons/password.png'),
                         hint: 'Password',
-                        suffixIcon: IconButton(onPressed: () {
-                          isPassHidden = !isPassHidden ;
-                          setState(() {
-
-                          });
-                        }, icon: Icon(isPassHidden?CupertinoIcons.eye_slash : CupertinoIcons.eye)),
+                        suffixIcon: IconButton(
+                          onPressed: () {
+                            isPassHidden = !isPassHidden;
+                            setState(() {});
+                          },
+                          icon: Icon(
+                            isPassHidden
+                                ? CupertinoIcons.eye_slash
+                                : CupertinoIcons.eye,
+                          ),
+                        ),
                         obsecureText: isPassHidden ? true : false,
                         controller: passController,
                         validator: (p0) {
@@ -106,36 +115,54 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ),
                       SizedBox(height: 10),
                       CustomTextfield(
-                        prefixIcon: 'assets/icons/password.png',
+                        prefixIcon: Image.asset('assets/icons/password.png'),
                         hint: 'Confirm Password',
-                        suffixIcon: IconButton(onPressed: () {
-                          isConfirmPassHidden = !isConfirmPassHidden ;
-                          setState(() {
-
-                          });
-                        }, icon: Icon( isConfirmPassHidden?CupertinoIcons.eye_slash : CupertinoIcons.eye)),
-                        obsecureText: isConfirmPassHidden? true : false,
+                        suffixIcon: IconButton(
+                          onPressed: () {
+                            isConfirmPassHidden = !isConfirmPassHidden;
+                            setState(() {});
+                          },
+                          icon: Icon(
+                            isConfirmPassHidden
+                                ? CupertinoIcons.eye_slash
+                                : CupertinoIcons.eye,
+                          ),
+                        ),
+                        obsecureText: isConfirmPassHidden ? true : false,
                         controller: confirmPassController,
                         validator: (p0) {
                           if (p0 != passController.text) {
-                            return "Passwords Don't Match!" ;
+                            return "Passwords Don't Match!";
                           }
                           return null;
                         },
                       ),
                       SizedBox(height: 10),
                       CustomTextfield(
-                        prefixIcon: 'assets/icons/password.png',
+                        prefixIcon: Image.asset('assets/icons/password.png'),
                         hint: 'Phone Number',
                         controller: phoneController,
+                        validator: (p0){
+                          if(p0!.length <11){
+                            return 'Phone Number Must Have At Least 11 Numbers' ;
+                          }
+                          return null;
+                        },
                       ),
                       SizedBox(height: 20),
                       CustomButton(
                         title: 'Sign Up',
                         titleColor: ColorManager.mainColorWhite,
                         buttonColor: ColorManager.mainColorGreen,
-                        onPressed: () {
-                          if(formKey.currentState!.validate()){
+                        onPressed: () async {
+                          if (formKey.currentState!.validate()) {
+                            FirebaseServices firebase = FirebaseServices();
+                            await firebase.signUp(
+                              emailController.text,
+                              passController.text,
+                              usernameController.text,
+                              phoneController.text
+                            );
                             context.push('/signupConfirm');
                           }
                         },

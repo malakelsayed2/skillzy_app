@@ -40,12 +40,12 @@ class LoginScreen extends StatelessWidget {
                 ),
                 SizedBox(height: 20),
                 CustomTextfield(
-                  prefixIcon: 'assets/icons/emailIcon.png',
+                  prefixIcon: Image.asset('assets/icons/emailIcon.png'),
                   hint: 'Email',
                 ),
                 SizedBox(height: 10),
                 CustomTextfield(
-                  prefixIcon: 'assets/icons/password.png',
+                  prefixIcon: Image.asset('assets/icons/password.png'),
                   hint: 'Password',
                   // suffixIcon: CupertinoIcons.eye_slash,
                 ),

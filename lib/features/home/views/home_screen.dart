@@ -53,7 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               CustomTextfield(
-                prefixIcon: 'assets/icons/person.png',
+                prefixIcon:  Image.asset('assets/icons/person.png'),
                 hint: 'search',
               ),
               SizedBox(height: 35),

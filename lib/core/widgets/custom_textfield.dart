@@ -12,7 +12,7 @@ class CustomTextfield extends StatelessWidget {
     this.obsecureText = false
   });
 
-  final String prefixIcon;
+  final Widget? prefixIcon;
 
   final String hint;
 
@@ -33,7 +33,7 @@ class CustomTextfield extends StatelessWidget {
       decoration: InputDecoration(
         filled: true,
         fillColor: Color(0xFFF3F3F3),
-        prefixIcon: Image.asset(prefixIcon),
+        prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,
         // border: InputBorder.none,
         hintText: hint,

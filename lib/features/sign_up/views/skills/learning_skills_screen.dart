@@ -26,7 +26,7 @@ class LearningSkillsScreen extends StatelessWidget {
           ),
           SizedBox(height: 30),
           CustomTextfield(
-            prefixIcon: 'assets/icons/person.png',
+            prefixIcon: Image.asset('assets/icons/person.png'),
             hint: 'search',
           ),
           SizedBox(height: 45),
