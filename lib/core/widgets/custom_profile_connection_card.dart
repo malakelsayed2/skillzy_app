@@ -8,12 +8,12 @@ class CustomProfileConnectionCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Container(
+    return Container(
       padding: EdgeInsets.only(bottom: 10),
       decoration: BoxDecoration(
-          color: Color(0xFFF8F8F8),
-          borderRadius: BorderRadiusGeometry.circular(20),
-          border: Border.all(color: Color(0xFFE1E1E1), width: 2)
+        color: Color(0xFFF8F8F8),
+        borderRadius: BorderRadiusGeometry.circular(20),
+        border: Border.all(color: Color(0xFFE1E1E1), width: 2),
       ),
       width: 170,
       child: Column(
@@ -35,22 +35,16 @@ class CustomProfileConnectionCard extends StatelessWidget {
                 left: 0,
                 right: 0,
                 bottom: -25,
-                child: CircleAvatar(
-                  backgroundColor: Colors.grey,
-                  radius: 45,
-                ),
+                child: CircleAvatar(backgroundColor: Colors.grey, radius: 45),
               ),
             ],
           ),
           SizedBox(height: 30),
           Text(
             'Malak Elsayed',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 17,
-            ),
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
           ),
-          SizedBox(height: 5,),
+          SizedBox(height: 5),
           Text(
             'Alexandria, Egypt',
             style: TextStyle(fontSize: 11, color: Colors.grey),
@@ -59,7 +53,7 @@ class CustomProfileConnectionCard extends StatelessWidget {
             'HTML|Drawing|UI-UX',
             style: TextStyle(fontSize: 11, color: Colors.grey),
           ),
-          SizedBox(height: 10,),
+          SizedBox(height: 10),
           SizedBox(
             width: 150,
             height: 30,
@@ -78,6 +72,13 @@ class CustomProfileConnectionCard extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  Image.asset(
+                    'assets/icons/addFriendIcon.png',
+                    color: Color(ColorManager.mainColorWhite),
+                    height:20
+                  ),
+
+                  SizedBox(width: 5),
                   Text(
                     "Request",
                     style: TextStyle(
@@ -85,8 +86,6 @@ class CustomProfileConnectionCard extends StatelessWidget {
                       color: Color(ColorManager.mainColorWhite),
                     ),
                   ),
-                  SizedBox(width: 5,),
-                  Icon(CupertinoIcons.person_add ,color: Color(ColorManager.mainColorWhite),),
                 ],
               ),
             ),

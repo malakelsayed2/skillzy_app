@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'package:skillzy_app/core/constants/color_manager.dart';
 import 'package:skillzy_app/core/constants/string_manager.dart';
@@ -88,7 +89,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         title: 'View Matchies',
                         titleColor: ColorManager.mainColorGreen,
                         buttonColor: ColorManager.mainColorWhite,
-                        onPressed: () {},
+                        onPressed: () {context.push('/peopleMatch');},
                       ),
                     ],
                   ),
@@ -125,6 +126,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   itemCount: 4,
                 ),
               ),
+
             ],
           ),
         ),

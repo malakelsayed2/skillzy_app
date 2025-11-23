@@ -13,7 +13,7 @@ class CustomSkillCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 120,
-      width: 170,
+      width: 190,
       child: Stack(
         fit: StackFit.expand,
         children: [

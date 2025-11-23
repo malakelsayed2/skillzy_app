@@ -4,7 +4,6 @@ import 'package:provider/provider.dart';
 import 'package:skillzy_app/app/skillzy_app.dart';
 import 'package:skillzy_app/core/view_model/app_brain.dart';
 
-import 'core/services/firebase_services.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();

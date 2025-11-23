@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:skillzy_app/features/home/main_layout.dart';
-import 'package:skillzy_app/features/home/views/home_screen.dart';
+import 'package:skillzy_app/features/home/views/people_match_screen.dart';
 import 'package:skillzy_app/features/login/views/forgot_pass_screen.dart';
 import 'package:skillzy_app/features/login/views/login_screen.dart';
 import 'package:skillzy_app/features/sign_up/views/access_confirm.dart';
@@ -21,7 +21,9 @@ final GoRouter router = GoRouter(
     GoRoute(path: '/signupConfirm', builder: (context, state) => SignupConfirmScreen()),
     GoRoute(path: '/accessConfirm', builder: (context, state) => AccessConfirm()),
     GoRoute(path: '/skills', builder: (context, state) => SkillsScreen()),
-    GoRoute(path: '/mainLayout', builder: (context, state) => HomeScreen()),
+    GoRoute(path: '/mainLayout', builder: (context, state) => MainLayout()),
+    GoRoute(path: '/peopleMatch', builder: (context, state) => PeopleMatchScreen()),
+
 
   ],
 );

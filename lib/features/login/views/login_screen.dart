@@ -27,118 +27,120 @@ class LoginScreen extends StatelessWidget {
               topLeft: Radius.circular(20),
             ),
           ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Image.asset(StringManager.appLogo2, height: 90),
-              SizedBox(height: 20),
-              Text(
-                ' Log In To Your Account',
-                style: TextStyle(color: Colors.black, fontSize: 20),
-              ),
-              SizedBox(height: 20),
-              CustomTextfield(
-                prefixIcon: 'assets/icons/emailIcon.png',
-                hint: 'Email',
-              ),
-              SizedBox(height: 10),
-              CustomTextfield(
-                prefixIcon: 'assets/icons/password.png',
-                hint: 'Password',
-                suffixIcon: CupertinoIcons.eye_slash,
-              ),
-              SizedBox(height: 10),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      IconButton(
-                        onPressed: () {},
-                        icon: Icon(
-                          CupertinoIcons.check_mark_circled,
-                          color: Color(ColorManager.mainColorGreen),
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Image.asset(StringManager.appLogo2, height: 90),
+                SizedBox(height: 20),
+                Text(
+                  ' Log In To Your Account',
+                  style: TextStyle(color: Colors.black, fontSize: 20),
+                ),
+                SizedBox(height: 20),
+                CustomTextfield(
+                  prefixIcon: 'assets/icons/emailIcon.png',
+                  hint: 'Email',
+                ),
+                SizedBox(height: 10),
+                CustomTextfield(
+                  prefixIcon: 'assets/icons/password.png',
+                  hint: 'Password',
+                  suffixIcon: CupertinoIcons.eye_slash,
+                ),
+                SizedBox(height: 10),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        IconButton(
+                          onPressed: () {},
+                          icon: Icon(
+                            CupertinoIcons.check_mark_circled,
+                            color: Color(ColorManager.mainColorGreen),
+                          ),
                         ),
-                      ),
-                      Text(
-                        'Remember Me',
+                        Text(
+                          'Remember Me',
+                          style: TextStyle(
+                            color: Color(ColorManager.mainColorGreen),
+                            fontSize: 14,
+                          ),
+                        ),
+                      ],
+                    ),
+                    TextButton(
+                      onPressed: () {context.push('/forgotPass');},
+                      child: Text(
+                        'Forgot Password?',
                         style: TextStyle(
                           color: Color(ColorManager.mainColorGreen),
                           fontSize: 14,
                         ),
                       ),
-                    ],
-                  ),
-                  TextButton(
-                    onPressed: () {context.push('/forgotPass');},
-                    child: Text(
-                      'Forgot Password?',
-                      style: TextStyle(
-                        color: Color(ColorManager.mainColorGreen),
-                        fontSize: 14,
+                    ),
+                  ],
+                ),
+                SizedBox(height: 20),
+                CustomButton(
+                  title: 'Login',
+                  titleColor: ColorManager.mainColorWhite,
+                  buttonColor: ColorManager.mainColorGreen,
+                  onPressed: () {},
+                ),
+                SizedBox(height: 30),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Or Log In With',
+                      style: TextStyle(color: Colors.black, fontSize: 14),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 10),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    IconButton(
+                      onPressed: () {},
+                      icon: Image.asset('assets/icons/facebookIcon.png'),
+                    ),
+                    IconButton(
+                      onPressed: () {},
+                      icon: Image.asset('assets/icons/googleIcon.png'),
+                    ),
+                    IconButton(
+                      onPressed: () {},
+                      icon: Image.asset('assets/icons/appleIcon.png'),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Don\'t Have An Account?',
+                      style: TextStyle(fontSize: 16, color: Colors.black),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        context.go('/signup');
+                      },
+                      child: Text(
+                        'Sign Up',
+                        style: TextStyle(
+                          fontSize: 14,
+                          color: Color(ColorManager.mainColorGreen),
+                        ),
                       ),
                     ),
-                  ),
-                ],
-              ),
-              SizedBox(height: 20),
-              CustomButton(
-                title: 'Login',
-                titleColor: ColorManager.mainColorWhite,
-                buttonColor: ColorManager.mainColorGreen,
-                onPressed: () {},
-              ),
-              SizedBox(height: 30),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    'Or Log In With',
-                    style: TextStyle(color: Colors.black, fontSize: 14),
-                  ),
-                ],
-              ),
-              SizedBox(height: 10),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  IconButton(
-                    onPressed: () {},
-                    icon: Image.asset('assets/icons/facebookIcon.png'),
-                  ),
-                  IconButton(
-                    onPressed: () {},
-                    icon: Image.asset('assets/icons/googleIcon.png'),
-                  ),
-                  IconButton(
-                    onPressed: () {},
-                    icon: Image.asset('assets/icons/appleIcon.png'),
-                  ),
-                ],
-              ),
-              SizedBox(height: 20),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    'Don\'t Have An Account?',
-                    style: TextStyle(fontSize: 16, color: Colors.black),
-                  ),
-                  TextButton(
-                    onPressed: () {
-                      context.go('/signup');
-                    },
-                    child: Text(
-                      'Sign Up',
-                      style: TextStyle(
-                        fontSize: 14,
-                        color: Color(ColorManager.mainColorGreen),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ],
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),

@@ -82,6 +82,11 @@ flutter:
     - assets/images/access.png
     - assets/images/signup_check.png
     - assets/icons/searchIcon.png
+    - assets/icons/addFriendIcon.png
+    - assets/icons/CoursesIcon.png
+    - assets/icons/homeIcon.png
+    - assets/icons/requestsIcon.png
+    - assets/icons/scheduleIcon.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

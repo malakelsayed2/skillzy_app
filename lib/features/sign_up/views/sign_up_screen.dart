@@ -26,96 +26,98 @@ class SignUpScreen extends StatelessWidget {
               topLeft: Radius.circular(20),
             ),
           ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Image.asset(StringManager.appLogo2 , height: 90,),
-              Text(
-                'Create Account',
-                style: TextStyle(color: Colors.black, fontSize: 20),
-              ),
-              SizedBox(height: 20,),
-              CustomTextfield(
-                prefixIcon: 'assets/icons/person.png',
-                hint: 'Username',
-              ),
-              SizedBox(height: 10,),
-              CustomTextfield(
-                prefixIcon: 'assets/icons/emailIcon.png',
-                hint: 'Email',
-              ),
-              SizedBox(height: 10,),
-              CustomTextfield(
-                prefixIcon: 'assets/icons/password.png',
-                hint: 'Password',
-                suffixIcon: CupertinoIcons.eye_slash,
-              ),
-              SizedBox(height: 10,),
-              CustomTextfield(
-                prefixIcon: 'assets/icons/password.png',
-                hint: 'Confirm Password',
-                suffixIcon: CupertinoIcons.eye_slash,
-              ),
-              SizedBox(height: 10,),
-              CustomTextfield(
-                prefixIcon: 'assets/icons/password.png',
-                hint: 'Phone Number',
-              ),
-              SizedBox(height: 20,),
-              CustomButton(
-                title: 'Sign Up',
-                titleColor: ColorManager.mainColorWhite,
-                buttonColor: ColorManager.mainColorGreen,
-                onPressed: () {context.push('/signupConfirm');},
-              ),
-              SizedBox(height: 20,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    'Or Sign Up With',
-                    style: TextStyle(color: Colors.black, fontSize: 14),
-                  ),
-                ],
-              ),
-              SizedBox(height: 10,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  IconButton(
-                    onPressed: () {},
-                    icon: Image.asset('assets/icons/facebookIcon.png'),
-                  ),
-                  IconButton(
-                    onPressed: () {},
-                    icon: Image.asset('assets/icons/googleIcon.png'),
-                  ),
-                  IconButton(
-                    onPressed: () {},
-                    icon: Image.asset('assets/icons/appleIcon.png'),
-                  ),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    'Already Have An Account?',
-                    style: TextStyle(fontSize: 16, color: Colors.black),
-                  ),
-                  TextButton(
-                    onPressed: () {context.go('/login');},
-                    child: Text(
-                      'Login',
-                      style: TextStyle(
-                        fontSize: 14,
-                        color: Color(ColorManager.mainColorGreen),
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Image.asset(StringManager.appLogo2 , height: 90,),
+                Text(
+                  'Create Account',
+                  style: TextStyle(color: Colors.black, fontSize: 20),
+                ),
+                SizedBox(height: 20,),
+                CustomTextfield(
+                  prefixIcon: 'assets/icons/person.png',
+                  hint: 'Username',
+                ),
+                SizedBox(height: 10,),
+                CustomTextfield(
+                  prefixIcon: 'assets/icons/emailIcon.png',
+                  hint: 'Email',
+                ),
+                SizedBox(height: 10,),
+                CustomTextfield(
+                  prefixIcon: 'assets/icons/password.png',
+                  hint: 'Password',
+                  suffixIcon: CupertinoIcons.eye_slash,
+                ),
+                SizedBox(height: 10,),
+                CustomTextfield(
+                  prefixIcon: 'assets/icons/password.png',
+                  hint: 'Confirm Password',
+                  suffixIcon: CupertinoIcons.eye_slash,
+                ),
+                SizedBox(height: 10,),
+                CustomTextfield(
+                  prefixIcon: 'assets/icons/password.png',
+                  hint: 'Phone Number',
+                ),
+                SizedBox(height: 20,),
+                CustomButton(
+                  title: 'Sign Up',
+                  titleColor: ColorManager.mainColorWhite,
+                  buttonColor: ColorManager.mainColorGreen,
+                  onPressed: () {context.push('/signupConfirm');},
+                ),
+                SizedBox(height: 20,),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Or Sign Up With',
+                      style: TextStyle(color: Colors.black, fontSize: 14),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 10,),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    IconButton(
+                      onPressed: () {},
+                      icon: Image.asset('assets/icons/facebookIcon.png'),
+                    ),
+                    IconButton(
+                      onPressed: () {},
+                      icon: Image.asset('assets/icons/googleIcon.png'),
+                    ),
+                    IconButton(
+                      onPressed: () {},
+                      icon: Image.asset('assets/icons/appleIcon.png'),
+                    ),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Already Have An Account?',
+                      style: TextStyle(fontSize: 16, color: Colors.black),
+                    ),
+                    TextButton(
+                      onPressed: () {context.go('/login');},
+                      child: Text(
+                        'Login',
+                        style: TextStyle(
+                          fontSize: 14,
+                          color: Color(ColorManager.mainColorGreen),
+                        ),
                       ),
                     ),
-                  ),
-                ],
-              ),
-            ],
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),
