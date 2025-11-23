@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import '../../../core/constants/color_manager.dart';
 import '../../../core/constants/string_manager.dart';
 import '../../../core/widgets/custom_button.dart';
+import '../../../core/widgets/custom_external_signup_login.dart';
 import '../../../core/widgets/custom_textfield.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -46,7 +47,7 @@ class LoginScreen extends StatelessWidget {
                 CustomTextfield(
                   prefixIcon: 'assets/icons/password.png',
                   hint: 'Password',
-                  suffixIcon: CupertinoIcons.eye_slash,
+                  // suffixIcon: CupertinoIcons.eye_slash,
                 ),
                 SizedBox(height: 10),
                 Row(
@@ -100,23 +101,7 @@ class LoginScreen extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: 10),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    IconButton(
-                      onPressed: () {},
-                      icon: Image.asset('assets/icons/facebookIcon.png'),
-                    ),
-                    IconButton(
-                      onPressed: () {},
-                      icon: Image.asset('assets/icons/googleIcon.png'),
-                    ),
-                    IconButton(
-                      onPressed: () {},
-                      icon: Image.asset('assets/icons/appleIcon.png'),
-                    ),
-                  ],
-                ),
+                CustomExternalSignupLogin(),
                 SizedBox(height: 20),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,

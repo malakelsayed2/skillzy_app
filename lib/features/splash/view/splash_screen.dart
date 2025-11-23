@@ -8,7 +8,7 @@ import '../../../core/view_model/app_brain.dart';
 
 
 class SplashScreen extends StatefulWidget {
-  SplashScreen({super.key});
+  const SplashScreen({super.key});
 
   @override
   State<SplashScreen> createState() => _SplashScreenState();

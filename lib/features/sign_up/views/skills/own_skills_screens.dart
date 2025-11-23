@@ -6,7 +6,7 @@ import 'package:skillzy_app/core/widgets/custom_textfield.dart';
 import '../../../../core/view_model/app_brain.dart';
 
 class OwnSkillsScreens extends StatelessWidget {
-  OwnSkillsScreens({super.key});
+  const OwnSkillsScreens({super.key});
 
   @override
   Widget build(BuildContext context) {

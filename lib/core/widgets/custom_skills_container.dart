@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../constants/color_manager.dart';
 
 class CustomSkillsContainer extends StatefulWidget {
-  const CustomSkillsContainer({Key? key, required this.skill}) : super(key: key);
+  const CustomSkillsContainer({super.key, required this.skill});
 
   final String skill ;
 
