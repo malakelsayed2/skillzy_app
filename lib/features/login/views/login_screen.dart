@@ -88,7 +88,9 @@ class LoginScreen extends StatelessWidget {
                   title: 'Login',
                   titleColor: ColorManager.mainColorWhite,
                   buttonColor: ColorManager.mainColorGreen,
-                  onPressed: () {},
+                  onPressed: () {
+                    context.go('/mainLayout') ;
+                  },
                 ),
                 SizedBox(height: 30),
                 Row(

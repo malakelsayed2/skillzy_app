@@ -18,7 +18,7 @@ class CustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: 323,
-      height: 48,
+      height: 40,
       child: ElevatedButton(
         style: ButtonStyle(
           shape: WidgetStatePropertyAll(
@@ -29,7 +29,7 @@ class CustomButton extends StatelessWidget {
         onPressed: onPressed,
         child: Text(
           title,
-          style: TextStyle(fontSize: 20, color: Color(titleColor)),
+          style: TextStyle(fontSize: 15, color: Color(titleColor)),
         ),
       ),
     );
